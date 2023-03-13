@@ -24,15 +24,15 @@ struct LYRAUINAVIGATION_API FLoadedMappableConfigPair
 	{}
 
 	/** The player mappable input config that should be applied to the Enhanced Input subsystem */
-	UPROPERTY(BlueprintReadOnly, VisibleAnywhere)
+	UPROPERTY(BlueprintReadOnly, VisibleAnywhere, Category = "Lyra Mappable Config Pair")
 	TObjectPtr<const UPlayerMappableInputConfig> Config = nullptr;
 
 	/** The type of device that this mapping config should be applied to */
-	UPROPERTY(BlueprintReadOnly, VisibleAnywhere)
+	UPROPERTY(BlueprintReadOnly, VisibleAnywhere, Category = "Lyra Mappable Config Pair")
 	ECommonInputType Type = ECommonInputType::Count;
 
 	/** If this config is currently active. A config is marked as active when it's owning GFA is active */
-	UPROPERTY(BlueprintReadOnly, VisibleAnywhere)
+	UPROPERTY(BlueprintReadOnly, VisibleAnywhere, Category = "Lyra Mappable Config Pair")
 	bool bIsActive = false;
 };
 
@@ -44,7 +44,7 @@ struct LYRAUINAVIGATION_API FMappableConfigPair
 	
 	FMappableConfigPair() = default;
 	
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere, Category = "Lyra Mappable Config Pair")
 	TSoftObjectPtr<UPlayerMappableInputConfig> Config;
 
 	/**
@@ -52,7 +52,7 @@ struct LYRAUINAVIGATION_API FMappableConfigPair
 	 * for things like the settings screen, or if you only want to apply this config when a certain
 	 * input type is being used.
 	 */
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere, Category = "Lyra Mappable Config Pair")
 	ECommonInputType Type = ECommonInputType::Count;
 
 	/**
@@ -61,19 +61,19 @@ struct LYRAUINAVIGATION_API FMappableConfigPair
 	 * If the platform does not have one of the traits specified it can still be registered, but cannot
 	 * be activated. 
 	 */
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere, Category = "Lyra Mappable Config Pair")
 	FGameplayTagContainer DependentPlatformTraits;
 
 	/**
 	 * If the current platform has any of these traits, then this config will not be actived.
 	 */
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere, Category = "Lyra Mappable Config Pair")
 	FGameplayTagContainer ExcludedPlatformTraits;
 
 	/** If true, then this input config will be activated when it's associated Game Feature is activated.
 	 * This is normally the desirable behavior
 	 */
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere, Category = "Lyra Mappable Config Pair")
 	bool bShouldActivateAutomatically = true;
 
 	/** Returns true if this config pair can be activated based on the current platform traits and settings. */

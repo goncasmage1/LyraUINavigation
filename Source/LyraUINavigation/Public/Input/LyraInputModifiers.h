@@ -120,7 +120,7 @@ public:
 	ELyraTargetingType TargetingType = ELyraTargetingType::Normal;
 
 	/** Asset that gives us access to the float scalar value being used for sensitivty */
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, meta=(AssetBundles="Client,Server"))
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Lyra Input Modifier Gamepad Sensitivity", meta=(AssetBundles="Client,Server"))
 	TObjectPtr<const ULyraAimSensitivityData> SensitivityLevelTable;
 
 protected:

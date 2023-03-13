@@ -31,6 +31,6 @@ public:
 protected:
 	void HandleEscapeAction();
 
-	UPROPERTY(EditDefaultsOnly)
+	UPROPERTY(EditDefaultsOnly, Category = "Lyra HUD Layout")
 	TSoftClassPtr<UCommonActivatableWidget> EscapeMenuClass;
 };

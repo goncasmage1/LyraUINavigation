@@ -34,13 +34,13 @@ protected:
 	UPROPERTY(BlueprintReadOnly, Category = Input, meta = (BindWidget, OptionalWidget = true, AllowPrivateAccess = true))
 	TObjectPtr<ULyraTabListWidgetBase> TopSettingsTabs;
 	
-	UPROPERTY(EditDefaultsOnly)
+	UPROPERTY(EditDefaultsOnly, Category = "Lyra Setting Screen")
 	FDataTableRowHandle BackInputActionData;
 
-	UPROPERTY(EditDefaultsOnly)
+	UPROPERTY(EditDefaultsOnly, Category = "Lyra Setting Screen")
 	FDataTableRowHandle ApplyInputActionData;
 
-	UPROPERTY(EditDefaultsOnly)
+	UPROPERTY(EditDefaultsOnly, Category = "Lyra Setting Screen")
 	FDataTableRowHandle CancelChangesInputActionData;
 
 	FUIActionBindingHandle BackHandle;

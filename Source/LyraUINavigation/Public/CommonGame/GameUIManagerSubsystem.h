@@ -46,6 +46,6 @@ private:
 	UPROPERTY(Transient)
 	TObjectPtr<UGameUIPolicy> CurrentPolicy = nullptr;
 
-	UPROPERTY(config, EditAnywhere)
+	UPROPERTY(config, EditAnywhere, Category = "UI Policy")
 	TSoftClassPtr<UGameUIPolicy> DefaultUIPolicyClass;
 };

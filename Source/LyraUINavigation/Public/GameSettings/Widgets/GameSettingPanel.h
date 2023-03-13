@@ -101,10 +101,10 @@ private:
 	bool bAdjustListViewPostRefresh = true;
 
 private:	// Bound Widgets
-	UPROPERTY(BlueprintReadOnly, meta = (BindWidget, BlueprintProtected = true, AllowPrivateAccess = true))
+	UPROPERTY(BlueprintReadOnly, Category = "Game Setting Panel", meta = (BindWidget, BlueprintProtected = true, AllowPrivateAccess = true))
 	TObjectPtr<UGameSettingListView> ListView_Settings;
 
-	UPROPERTY(BlueprintReadOnly, meta = (BindWidgetOptional, BlueprintProtected = true, AllowPrivateAccess = true))
+	UPROPERTY(BlueprintReadOnly, Category = "Game Setting Panel", meta = (BindWidgetOptional, BlueprintProtected = true, AllowPrivateAccess = true))
 	TObjectPtr<UGameSettingDetailView> Details_Settings;
 
 private:

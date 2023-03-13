@@ -33,23 +33,23 @@ public:
 	, CreatedTabContentWidget(nullptr)
 	{ }
 
-	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Lyra Tab")
 	FName TabId;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Lyra Tab")
 	FText TabText;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Lyra Tab")
 	FSlateBrush IconBrush;
 
-	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Lyra Tab")
 	bool bHidden;
 
-	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Lyra Tab")
 	TSubclassOf<UCommonButtonBase> TabButtonType;
 
 	//TODO NDarnell - This should become a TSoftClassPtr<>, the underlying common tab list needs to be able to handle lazy tab content construction.
-	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Lyra Tab")
 	TSubclassOf<UCommonUserWidget> TabContentType;
 
 	UPROPERTY(Transient)
@@ -126,7 +126,7 @@ protected:
 private:
 	void SetupTabs();
 
-	UPROPERTY(EditAnywhere, meta=(TitleProperty="TabId"))
+	UPROPERTY(EditAnywhere, Category = "Lyra Tab List Widget", meta=(TitleProperty="TabId"))
 	TArray<FLyraTabDescriptor> PreregisteredTabInfoArray;
 	
 	/**

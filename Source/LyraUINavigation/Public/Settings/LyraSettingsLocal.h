@@ -344,7 +344,7 @@ public:
 	int32 UnregisterInputConfig(const UPlayerMappableInputConfig* ConfigToRemove);
 
 	/** Get an input config with a certain name. If the config doesn't exist then nullptr will be returned. */
-	UFUNCTION(BlueprintCallable)
+	UFUNCTION(BlueprintCallable, Category = "Lyra Settings Local")
 	const UPlayerMappableInputConfig* GetInputConfigByName(FName ConfigName) const;
 
 	/** Get all currently registered input configs */
@@ -425,7 +425,7 @@ private:
 	 * 
 	 * @see UGameFeatureAction_AddInputConfig
 	 */
-	UPROPERTY(VisibleAnywhere)
+	UPROPERTY(VisibleAnywhere, Category = "Lyra Settings Local")
 	TArray<FLoadedMappableConfigPair> RegisteredInputConfigs;
 	
 	/** Array of custom key mappings that have been set by the player. Empty by default. */

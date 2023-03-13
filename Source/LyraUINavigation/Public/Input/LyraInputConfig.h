@@ -25,10 +25,10 @@ struct FLyraInputAction
 
 public:
 
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Lyra Input Action")
 	TObjectPtr<const UInputAction> InputAction = nullptr;
 
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Meta = (Categories = "InputTag"))
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Lyra Input Action", Meta = (Categories = "InputTag"))
 	FGameplayTag InputTag;
 };
 
@@ -54,10 +54,10 @@ public:
 
 public:
 	// List of input actions used by the owner.  These input actions are mapped to a gameplay tag and must be manually bound.
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Meta = (TitleProperty = "InputAction"))
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Lyra Input Config", Meta = (TitleProperty = "InputAction"))
 	TArray<FLyraInputAction> NativeInputActions;
 
 	// List of input actions used by the owner.  These input actions are mapped to a gameplay tag and are automatically bound to abilities with matching input tags.
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Meta = (TitleProperty = "InputAction"))
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Lyra Input Config", Meta = (TitleProperty = "InputAction"))
 	TArray<FLyraInputAction> AbilityInputActions;
 };

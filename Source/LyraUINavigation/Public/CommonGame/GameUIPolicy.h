@@ -96,7 +96,7 @@ protected:
 private:
 	ELocalMultiplayerInteractionMode LocalMultiplayerInteractionMode = ELocalMultiplayerInteractionMode::PrimaryOnly;
 
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere, Category = "UI Policy")
 	TSoftClassPtr<UPrimaryGameLayout> LayoutClass;
 
 	UPROPERTY(Transient)

@@ -19,7 +19,7 @@ class LYRAUINAVIGATION_API ULyraButtonBase : public UCommonButtonBase
 	GENERATED_BODY()
 
 public:
-	UFUNCTION(BlueprintCallable)
+	UFUNCTION(BlueprintCallable, Category = "Lyra Button")
 	void SetButtonText(const FText& InText);
 	
 protected:

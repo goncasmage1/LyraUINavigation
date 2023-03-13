@@ -21,7 +21,7 @@ public:
 	//~ End of UCommonActionWidget interface
 
 	/** The Enhanced Input Action that is associated with this Common Input action. */
-	UPROPERTY(BlueprintReadOnly, EditAnywhere)
+	UPROPERTY(BlueprintReadOnly, EditAnywhere, Category = "Lyra Action Widget")
 	const TObjectPtr<UInputAction> AssociatedInputAction;
 
 private:

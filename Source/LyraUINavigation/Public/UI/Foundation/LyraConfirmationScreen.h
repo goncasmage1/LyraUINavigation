@@ -51,6 +51,6 @@ private:
 	UPROPERTY(Meta = (BindWidget))
 	TObjectPtr<UCommonBorder> Border_TapToCloseZone;
 
-	UPROPERTY(EditDefaultsOnly, meta = (RowType = "/Script/CommonUI.CommonInputActionDataBase"))
+	UPROPERTY(EditDefaultsOnly, Category = "Lyra Confirmation Screen", meta = (RowType = "/Script/CommonUI.CommonInputActionDataBase"))
 	FDataTableRowHandle CancelAction;
 };

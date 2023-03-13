@@ -26,14 +26,14 @@ public:
 	/** UGameSettingValueDiscrete */
 	virtual void SetDiscreteOptionByIndex(int32 Index) PURE_VIRTUAL(,);
 	
-	UFUNCTION(BlueprintCallable)
+	UFUNCTION(BlueprintCallable, Category = "Game Setting Value")
 	virtual int32 GetDiscreteOptionIndex() const PURE_VIRTUAL(,return INDEX_NONE;);
 
 	/** Optional */
-	UFUNCTION(BlueprintCallable)
+	UFUNCTION(BlueprintCallable, Category = "Game Setting Value")
 	virtual int32 GetDiscreteOptionDefaultIndex() const { return INDEX_NONE; }
 
-	UFUNCTION(BlueprintCallable)
+	UFUNCTION(BlueprintCallable, Category = "Game Setting Value")
 	virtual TArray<FText> GetDiscreteOptions() const PURE_VIRTUAL(,return TArray<FText>(););
 
 	virtual FString GetAnalyticsValue() const;

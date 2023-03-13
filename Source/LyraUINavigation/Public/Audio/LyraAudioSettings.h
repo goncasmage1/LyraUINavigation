@@ -19,10 +19,10 @@ struct FLyraSubmixEffectChainMap
 {
 	GENERATED_BODY()
 
-	UPROPERTY(EditAnywhere, meta = (AllowedClasses = "/Script/Engine.SoundSubmix"))
+	UPROPERTY(EditAnywhere, Category = "SubmixEffectChain", meta = (AllowedClasses = "/Script/Engine.SoundSubmix"))
 	TSoftObjectPtr<USoundSubmix> Submix = nullptr;
 
-	UPROPERTY(EditAnywhere, meta = (AllowedClasses = "/Script/Engine.SoundEffectSubmixPreset"))
+	UPROPERTY(EditAnywhere, Category = "SubmixEffectChain", meta = (AllowedClasses = "/Script/Engine.SoundEffectSubmixPreset"))
 	TArray<TSoftObjectPtr<USoundEffectSubmixPreset>> SubmixEffectChain;
 
 };

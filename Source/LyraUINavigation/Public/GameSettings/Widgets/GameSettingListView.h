@@ -33,7 +33,7 @@ protected:
 	virtual bool OnIsSelectableOrNavigableInternal(UObject* SelectedItem) override;
 
 protected:
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere, Category = "Game Setting List View")
 	TObjectPtr<UGameSettingVisualData> VisualData;
 
 private:

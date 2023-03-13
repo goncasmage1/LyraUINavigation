@@ -24,7 +24,7 @@ class LYRAUINAVIGATION_API IGameSettingActionInterface
 
 public:
 	/** */
-	UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
+	UFUNCTION(BlueprintCallable, BlueprintNativeEvent, Category = "Game Setting Action Interface")
 	bool ExecuteActionForSetting(FGameplayTag ActionTag, UGameSetting* InSetting);
 };
 

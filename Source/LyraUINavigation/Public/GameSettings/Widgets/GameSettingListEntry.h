@@ -66,7 +66,7 @@ protected:
 private:
 	void HandleSettingChanged(UGameSetting* InSetting, EGameSettingChangeReason Reason);
 
-	UPROPERTY(BlueprintReadOnly, meta = (BindWidgetOptional, BlueprintProtected = true, AllowPrivateAccess = true))
+	UPROPERTY(BlueprintReadOnly, Category = "Game Setting List Entry Setting", meta = (BindWidgetOptional, BlueprintProtected = true, AllowPrivateAccess = true))
 	TObjectPtr<UUserWidget> Background;
 };
 
@@ -84,7 +84,7 @@ public:
 	virtual void SetSetting(UGameSetting* InSetting) override;
 	
 private:	// Bound Widgets
-	UPROPERTY(BlueprintReadOnly, meta = (BindWidget, BlueprintProtected = true, AllowPrivateAccess = true))
+	UPROPERTY(BlueprintReadOnly, Category = "Game Setting List Entry Setting", meta = (BindWidget, BlueprintProtected = true, AllowPrivateAccess = true))
 	TObjectPtr<UCommonTextBlock> Text_SettingName;
 };
 
@@ -119,16 +119,16 @@ protected:
 	TObjectPtr<UGameSettingValueDiscrete> DiscreteSetting;
 
 private:	// Bound Widgets
-	UPROPERTY(BlueprintReadOnly, meta = (BindWidget, BlueprintProtected = true, AllowPrivateAccess = true))
+	UPROPERTY(BlueprintReadOnly, Category = "Game Setting List Entry Setting", meta = (BindWidget, BlueprintProtected = true, AllowPrivateAccess = true))
 	TObjectPtr<UPanelWidget> Panel_Value;
 
-	UPROPERTY(BlueprintReadOnly, meta = (BindWidget, BlueprintProtected = true, AllowPrivateAccess = true))
+	UPROPERTY(BlueprintReadOnly, Category = "Game Setting List Entry Setting", meta = (BindWidget, BlueprintProtected = true, AllowPrivateAccess = true))
 	TObjectPtr<UGameSettingRotator> Rotator_SettingValue;
 
-	UPROPERTY(BlueprintReadOnly, meta = (BindWidget, BlueprintProtected = true, AllowPrivateAccess = true))
+	UPROPERTY(BlueprintReadOnly, Category = "Game Setting List Entry Setting", meta = (BindWidget, BlueprintProtected = true, AllowPrivateAccess = true))
 	TObjectPtr<UCommonButtonBase> Button_Decrease;
 
-	UPROPERTY(BlueprintReadOnly, meta = (BindWidget, BlueprintProtected = true, AllowPrivateAccess = true))
+	UPROPERTY(BlueprintReadOnly, Category = "Game Setting List Entry Setting", meta = (BindWidget, BlueprintProtected = true, AllowPrivateAccess = true))
 	TObjectPtr<UCommonButtonBase> Button_Increase;
 };
 
@@ -168,13 +168,13 @@ protected:
 	TObjectPtr<UGameSettingValueScalar> ScalarSetting;
 
 private:	// Bound Widgets
-	UPROPERTY(BlueprintReadOnly, meta = (BindWidget, BlueprintProtected = true, AllowPrivateAccess = true))
+	UPROPERTY(BlueprintReadOnly, Category = "Game Setting List Entry Setting", meta = (BindWidget, BlueprintProtected = true, AllowPrivateAccess = true))
 	TObjectPtr<UPanelWidget> Panel_Value;
 
-	UPROPERTY(BlueprintReadOnly, meta = (BindWidget, BlueprintProtected = true, AllowPrivateAccess = true))
+	UPROPERTY(BlueprintReadOnly, Category = "Game Setting List Entry Setting", meta = (BindWidget, BlueprintProtected = true, AllowPrivateAccess = true))
 	TObjectPtr<UAnalogSlider> Slider_SettingValue;
 
-	UPROPERTY(BlueprintReadOnly, meta = (BindWidget, BlueprintProtected = true, AllowPrivateAccess = true))
+	UPROPERTY(BlueprintReadOnly, Category = "Game Setting List Entry Setting", meta = (BindWidget, BlueprintProtected = true, AllowPrivateAccess = true))
 	TObjectPtr<UCommonTextBlock> Text_SettingValue;
 };
 
@@ -207,7 +207,7 @@ protected:
 
 private:	// Bound Widgets
 
-	UPROPERTY(BlueprintReadOnly, meta = (BindWidget, BlueprintProtected = true, AllowPrivateAccess = true))
+	UPROPERTY(BlueprintReadOnly, Category = "Game Setting List Entry Setting", meta = (BindWidget, BlueprintProtected = true, AllowPrivateAccess = true))
 	TObjectPtr<UCommonButtonBase> Button_Action;
 };
 
@@ -239,6 +239,6 @@ protected:
 
 private:	// Bound Widgets
 
-	UPROPERTY(BlueprintReadOnly, meta = (BindWidget, BlueprintProtected = true, AllowPrivateAccess = true))
+	UPROPERTY(BlueprintReadOnly, Category = "Game Setting List Entry Setting", meta = (BindWidget, BlueprintProtected = true, AllowPrivateAccess = true))
 	TObjectPtr<UCommonButtonBase> Button_Navigate;
 };

@@ -24,6 +24,6 @@ public:
 	
 protected:
 	/** Map of SensitivityMap settings to their corresponding float */
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Lyra Aim Sensitivity Data")
 	TMap<ELyraGamepadSensitivity, float> SensitivityMap;
 };

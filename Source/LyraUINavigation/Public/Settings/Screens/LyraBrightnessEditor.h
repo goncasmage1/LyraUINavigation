@@ -60,15 +60,15 @@ private:
 
 	TWeakObjectPtr<UGameSettingValueScalar> ValueSetting;
 
-	UPROPERTY(BlueprintReadOnly, meta = (BindWidget, AllowPrivateAccess = true))
+	UPROPERTY(BlueprintReadOnly, Category = "Lyra Brightness Editor", meta = (BindWidget, AllowPrivateAccess = true))
 	TObjectPtr<UWidgetSwitcher> Switcher_SafeZoneMessage;
 
-	UPROPERTY(BlueprintReadOnly, meta = (BindWidget, AllowPrivateAccess = true))
+	UPROPERTY(BlueprintReadOnly, Category = "Lyra Brightness Editor", meta = (BindWidget, AllowPrivateAccess = true))
 	TObjectPtr<UCommonRichTextBlock> RichText_Default;
 
-	UPROPERTY(BlueprintReadOnly, meta = (BindWidget, AllowPrivateAccess = true))
+	UPROPERTY(BlueprintReadOnly, Category = "Lyra Brightness Editor", meta = (BindWidget, AllowPrivateAccess = true))
 	TObjectPtr<UCommonButtonBase> Button_Back;
 
-	UPROPERTY(BlueprintReadOnly, meta = (BindWidget, AllowPrivateAccess = true))
+	UPROPERTY(BlueprintReadOnly, Category = "Lyra Brightness Editor", meta = (BindWidget, AllowPrivateAccess = true))
 	TObjectPtr<UCommonButtonBase> Button_Done;
 };

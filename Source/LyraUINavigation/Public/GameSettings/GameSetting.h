@@ -45,24 +45,24 @@ public:
 	 * Gets the non-localized developer name for this setting.  This should remain constant, and represent a 
 	 * unique identifier for this setting inside this settings registry.
 	 */
-	UFUNCTION(BlueprintCallable)
+	UFUNCTION(BlueprintCallable, Category = "Game Setting")
 	FName GetDevName() const { return DevName; }
 	void SetDevName(const FName& Value) { DevName = Value; }
 
 	bool GetAdjustListViewPostRefresh() const { return bAdjustListViewPostRefresh; }
 	void SetAdjustListViewPostRefresh(const bool Value) { bAdjustListViewPostRefresh = Value; }
 
-	UFUNCTION(BlueprintCallable)
+	UFUNCTION(BlueprintCallable, Category = "Game Setting")
 	FText GetDisplayName() const { return DisplayName; }
 	void SetDisplayName(const FText& Value) { DisplayName = Value; }
 #if !UE_BUILD_SHIPPING
 	void SetDisplayName(const FString& Value) { SetDisplayName(FText::FromString(Value)); }
 #endif
-	UFUNCTION(BlueprintCallable)
+	UFUNCTION(BlueprintCallable, Category = "Game Setting")
 	ESlateVisibility GetDisplayNameVisibility() { return DisplayNameVisibility; }
 	void SetNameDisplayVisibility(ESlateVisibility InVisibility) { DisplayNameVisibility = InVisibility; }
 
-	UFUNCTION(BlueprintCallable)
+	UFUNCTION(BlueprintCallable, Category = "Game Setting")
 	FText GetDescriptionRichText() const { return DescriptionRichText; }
 	void SetDescriptionRichText(const FText& Value) { DescriptionRichText = Value; InvalidateSearchableText(); }
 #if !UE_BUILD_SHIPPING
@@ -70,7 +70,7 @@ public:
 	void SetDescriptionRichText(const FString& Value) { SetDescriptionRichText(FText::FromString(Value)); }
 #endif
 
-	UFUNCTION(BlueprintCallable)
+	UFUNCTION(BlueprintCallable, Category = "Game Setting")
 	const FGameplayTagContainer& GetTags() const { return Tags; }
 	void AddTag(const FGameplayTag& TagToAdd) { Tags.AddTag(TagToAdd); }
 
@@ -92,10 +92,10 @@ public:
 	 * Gets the dynamic details about this setting.  This may be information like, how many refunds are remaining 
 	 * on their account, or the account number.
 	 */
-	UFUNCTION(BlueprintCallable)
+	UFUNCTION(BlueprintCallable, Category = "Game Setting")
 	FText GetDynamicDetails() const;
 
-	UFUNCTION(BlueprintCallable)
+	UFUNCTION(BlueprintCallable, Category = "Game Setting")
 	FText GetWarningRichText() const { return WarningRichText; }
 	void SetWarningRichText(const FText& Value) { WarningRichText = Value; InvalidateSearchableText(); }
 #if !UE_BUILD_SHIPPING

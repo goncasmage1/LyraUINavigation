@@ -36,35 +36,35 @@ public:
 	//~ End UUserWidget interface
 	
 	/** Get the enhanced input subsystem based on the owning local player of this widget. Will return null if there is no owning player */
-	UFUNCTION(BlueprintCallable)
+	UFUNCTION(BlueprintCallable, Category = "Lyra Simulated Input Widget")
 	UEnhancedInputLocalPlayerSubsystem* GetEnhancedInputSubsystem() const;
 
 	/** Get the current player input from the current input subsystem */
 	UEnhancedPlayerInput* GetPlayerInput() const;
 
 	/**  */
-	UFUNCTION(BlueprintCallable)
+	UFUNCTION(BlueprintCallable, Category = "Lyra Simulated Input Widget")
 	const UInputAction* GetAssociatedAction() const { return AssociatedAction; }
 
 	/** Returns the current key that will be used to input any values. */
-	UFUNCTION(BlueprintCallable)
+	UFUNCTION(BlueprintCallable, Category = "Lyra Simulated Input Widget")
 	FKey GetSimulatedKey() const { return KeyToSimulate; }
 
 	/**
 	 * Injects the given vector as an input to the current simulated key.
 	 * This calls "InputKey" on the current player.
 	 */
-	UFUNCTION(BlueprintCallable)
+	UFUNCTION(BlueprintCallable, Category = "Lyra Simulated Input Widget")
 	void InputKeyValue(const FVector& Value);
 
 	/**
 	 * Injects the given vector as an input to the current simulated key.
 	 * This calls "InputKey" on the current player.
 	 */
-	UFUNCTION(BlueprintCallable)
+	UFUNCTION(BlueprintCallable, Category = "Lyra Simulated Input Widget")
 	void InputKeyValue2D(const FVector2D& Value);
 
-	UFUNCTION(BlueprintCallable)
+	UFUNCTION(BlueprintCallable, Category = "Lyra Simulated Input Widget")
 	void FlushSimulatedInput();
 	
 protected:
@@ -73,15 +73,15 @@ protected:
 	void QueryKeyToSimulate();
 
 	/** The common visiblity border will allow you to specifiy UI for only specific platorms if desired */
-	UPROPERTY(BlueprintReadWrite, meta = (BindWidget))
+	UPROPERTY(BlueprintReadWrite, Category = "Lyra Simulated Input Widget", meta = (BindWidget))
 	TObjectPtr<UCommonHardwareVisibilityBorder> CommonVisibilityBorder = nullptr;
 	
 	/** The associated input action that we should simulate input for */
-	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Lyra Simulated Input Widget")
 	TObjectPtr<const UInputAction> AssociatedAction = nullptr;
 
 	/** The Key to simulate input for in the case where none are currently bound to the associated action */
-	UPROPERTY(BlueprintReadOnly, EditAnywhere)
+	UPROPERTY(BlueprintReadOnly, EditAnywhere, Category = "Lyra Simulated Input Widget")
 	FKey FallbackBindingKey = EKeys::Gamepad_Right2D;
 
 	/** The key that should be input via InputKey on the player input */

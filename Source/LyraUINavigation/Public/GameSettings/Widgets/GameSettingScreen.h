@@ -37,20 +37,20 @@ protected:
 	virtual void NativeOnDeactivated() override;
 	virtual UWidget* NativeGetDesiredFocusTarget() const override;
 
-	UFUNCTION(BlueprintCallable)
+	UFUNCTION(BlueprintCallable, Category = "Game Setting Screen")
 	void NavigateToSetting(FName SettingDevName);
 	
-	UFUNCTION(BlueprintCallable)
+	UFUNCTION(BlueprintCallable, Category = "Game Setting Screen")
 	void NavigateToSettings(const TArray<FName>& SettingDevNames);
 
 	UFUNCTION(BlueprintNativeEvent)
 	void OnSettingsDirtyStateChanged(bool bSettingsDirty);
 	virtual void OnSettingsDirtyStateChanged_Implementation(bool bSettingsDirty) { }
 
-	UFUNCTION(BlueprintCallable)
+	UFUNCTION(BlueprintCallable, Category = "Game Setting Screen")
 	bool AttemptToPopNavigation();
 
-	UFUNCTION(BlueprintCallable)
+	UFUNCTION(BlueprintCallable, Category = "Game Setting Screen")
 	UGameSettingCollection* GetSettingCollection(FName SettingDevName, bool& HasAnySettings); 
 
 protected:
@@ -59,13 +59,13 @@ protected:
 	template <typename GameSettingRegistryT = UGameSettingRegistry>
 	GameSettingRegistryT* GetRegistry() const { return Cast<GameSettingRegistryT>(const_cast<UGameSettingScreen*>(this)->GetOrCreateRegistry()); }
 
-	UFUNCTION(BlueprintCallable)
+	UFUNCTION(BlueprintCallable, Category = "Game Setting Screen")
 	virtual void CancelChanges();
 
-	UFUNCTION(BlueprintCallable)
+	UFUNCTION(BlueprintCallable, Category = "Game Setting Screen")
 	virtual void ApplyChanges();
 
-	UFUNCTION(BlueprintCallable)
+	UFUNCTION(BlueprintCallable, Category = "Game Setting Screen")
 	bool HaveSettingsBeenChanged() const { return ChangeTracker.HaveSettingsBeenChanged(); }
 
 	void ClearDirtyState();
@@ -78,7 +78,7 @@ private:
 	UGameSettingRegistry* GetOrCreateRegistry();
 
 private:	// Bound Widgets
-	UPROPERTY(BlueprintReadOnly, meta = (BindWidget, BlueprintProtected = true, AllowPrivateAccess = true))
+	UPROPERTY(BlueprintReadOnly, Category = "Game Setting Screen", meta = (BindWidget, BlueprintProtected = true, AllowPrivateAccess = true))
 	TObjectPtr<UGameSettingPanel> Settings_Panel;
 
 	UPROPERTY(Transient)

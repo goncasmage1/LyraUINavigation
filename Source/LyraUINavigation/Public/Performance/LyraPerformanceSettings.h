@@ -23,17 +23,17 @@ struct LYRAUINAVIGATION_API FLyraQualityDeviceProfileVariant
 	GENERATED_BODY()
 
 	// The display name for this device profile variant (visible in the options screen)
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere, Category = "Lyra Device Profile")
 	FText DisplayName;
 
 	// The suffix to append to the base device profile name for the current platform
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere, Category = "Lyra Device Profile")
 	FString DeviceProfileSuffix;
 
 	// The minimum required refresh rate to enable this mode
 	// (e.g., if this is set to 120 Hz and the device is connected
 	// to a 60 Hz display, it won't be available)
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere, Category = "Lyra Device Profile")
 	int32 MinRefreshRate = 0;
 };
 
