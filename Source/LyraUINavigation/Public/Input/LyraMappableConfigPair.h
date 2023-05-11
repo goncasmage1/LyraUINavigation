@@ -76,16 +76,4 @@ struct LYRAUINAVIGATION_API FMappableConfigPair
 	UPROPERTY(EditAnywhere, Category = "Lyra Mappable Config Pair")
 	bool bShouldActivateAutomatically = true;
 
-	/** Returns true if this config pair can be activated based on the current platform traits and settings. */
-	bool CanBeActivated() const;
-	
-	/**
-	 * Registers the given config mapping with the local settings
-	 */
-	static bool RegisterPair(const FMappableConfigPair& Pair);
-
-	/**
-	 * Unregisters the given config mapping with the local settings
-	 */
-	static void UnregisterPair(const FMappableConfigPair& Pair);
 };

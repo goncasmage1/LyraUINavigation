@@ -13,6 +13,9 @@ class LYRAUINAVIGATION_API UCommonGameInstance : public UGameInstance
 public:
 	UCommonGameInstance(const FObjectInitializer& ObjectInitializer);
 
+	virtual void Init() override;
+	virtual void Shutdown() override;
+
 	virtual int32 AddLocalPlayer(ULocalPlayer* NewPlayer, FPlatformUserId UserId) override;
 	virtual bool RemoveLocalPlayer(ULocalPlayer* ExistingPlayer) override;
 

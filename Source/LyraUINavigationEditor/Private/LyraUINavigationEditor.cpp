@@ -6,6 +6,7 @@
 #include "ISettingsModule.h"
 #include "ISettingsSection.h"
 #include "Modules/ModuleManager.h"
+#include "UI/LyraUIInputSettings.h"
 
 #define LOCTEXT_NAMESPACE "FLyraUINavigationEditorModule"
 
@@ -30,15 +31,26 @@ void FLyraUINavigationEditorModule::RegisterSettings()
 {
 	if (ISettingsModule* SettingsModule = FModuleManager::GetModulePtr<ISettingsModule>("Settings"))
 	{
-		ISettingsSectionPtr SettingsSection = SettingsModule->RegisterSettings("Project", "Plugins", "LyraUINavigation",
-			LOCTEXT("LyraUINavigationSettingsName", "Lyra UI Navigation"),
-			LOCTEXT("LyraUINavigationSettingsDescription", "Configure the Lyra UI Navigation settings."),
+		ISettingsSectionPtr UIManagerSettingsSection = SettingsModule->RegisterSettings("Project", "Game", "LyraUIPolicy",
+			LOCTEXT("LyraUINavigationSettingsName", "Lyra UI Policy"),
+			LOCTEXT("LyraUINavigationSettingsDescription", "Configure the Lyra UI policy."),
 			GetMutableDefault<ULyraUIManagerSubsystem>()
 		);
 
-		if (SettingsSection.IsValid())
+		if (UIManagerSettingsSection.IsValid())
 		{
-			SettingsSection->OnModified().BindRaw(this, &FLyraUINavigationEditorModule::HandleSettingsSaved);
+			UIManagerSettingsSection->OnModified().BindRaw(this, &FLyraUINavigationEditorModule::HandleSettingsSaved);
+		}
+
+		ISettingsSectionPtr UIInputSettingsSection = SettingsModule->RegisterSettings("Project", "Game", "LyraUIInput",
+			LOCTEXT("LyraUINavigationSettingsName", "Lyra UI Input"),
+			LOCTEXT("LyraUINavigationSettingsDescription", "Configure the Lyra UI input settings."),
+			GetMutableDefault<ULyraUIInputSettings>()
+		);
+
+		if (UIInputSettingsSection.IsValid())
+		{
+			UIInputSettingsSection->OnModified().BindRaw(this, &FLyraUINavigationEditorModule::HandleSettingsSaved);
 		}
 	}
 }
@@ -47,13 +59,15 @@ void FLyraUINavigationEditorModule::UnregisterSettings()
 {
 	if (ISettingsModule* SettingsModule = FModuleManager::GetModulePtr<ISettingsModule>("Settings"))
 	{
-		SettingsModule->UnregisterSettings("Project", "Plugins", "LyraUINavigation");
+		SettingsModule->UnregisterSettings("Project", "Game", "LyraUIPolicy");
+		SettingsModule->UnregisterSettings("Project", "Game", "LyraUIInput");
 	}
 }
 
 bool FLyraUINavigationEditorModule::HandleSettingsSaved()
 {
 	GetMutableDefault<ULyraUIManagerSubsystem>()->SaveConfig();
+	GetMutableDefault<ULyraUIInputSettings>()->SaveConfig();
 
 	return true;
 }

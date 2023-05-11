@@ -30,7 +30,7 @@ struct FLyraSubmixEffectChainMap
 /**
  * 
  */
-UCLASS(config = Game, defaultconfig, meta = (DisplayName = "LyraAudioSettings"))
+UCLASS(config = Game, defaultconfig, meta = (DisplayName = "Lyra Audio Settings"))
 class LYRAUINAVIGATION_API ULyraAudioSettings : public UDeveloperSettings
 {
 	GENERATED_BODY()

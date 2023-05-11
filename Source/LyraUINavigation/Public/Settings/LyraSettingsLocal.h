@@ -326,37 +326,8 @@ public:
 	UFUNCTION()
 	FName GetControllerPlatform() const;
 
-	DECLARE_EVENT_OneParam(ULyraSettingsLocal, FInputConfigDelegate, const FLoadedMappableConfigPair& /*Config*/);
-
-	/** Delegate called when a new input config has been registered */
-	FInputConfigDelegate OnInputConfigRegistered;
-
-	/** Delegate called when a registered input config has been activated */
-	FInputConfigDelegate OnInputConfigActivated;
-	
-	/** Delegate called when a registered input config has been deactivate */
-	FInputConfigDelegate OnInputConfigDeactivated;
-	
-	/** Register the given input config with the settings to make it available to the player. */
-	void RegisterInputConfig(ECommonInputType Type, const UPlayerMappableInputConfig* NewConfig, const bool bIsActive);
-	
-	/** Unregister the given input config. Returns the number of configs removed. */
-	int32 UnregisterInputConfig(const UPlayerMappableInputConfig* ConfigToRemove);
-
-	/** Get an input config with a certain name. If the config doesn't exist then nullptr will be returned. */
-	UFUNCTION(BlueprintCallable, Category = "Lyra Settings Local")
-	const UPlayerMappableInputConfig* GetInputConfigByName(FName ConfigName) const;
-
 	/** Get all currently registered input configs */
 	const TArray<FLoadedMappableConfigPair>& GetAllRegisteredInputConfigs() const { return RegisteredInputConfigs; }
-
-	/**
-	 * Get all registered input configs that match the input type.
-	 * 
-	 * @param Type		The type of config to get, ECommonInputType::Count will include all configs.
-	 * @param OutArray	Array to be populated with the current registered input configs that match the type
-	 */
-	void GetRegisteredInputConfigsOfType(ECommonInputType Type, OUT TArray<FLoadedMappableConfigPair>& OutArray) const;
 
 	/**
 	 * Returns the display name of any actions with that key bound to it
