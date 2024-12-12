@@ -1,4 +1,7 @@
 # LyraUINavigation
+
+THIS PLUGIN IS NO LONGER SUPPORTED! USE AT YOUR OWN RISK!
+
 Lyra's UI Navigation logic extracted into its own plugin
 
 In order to add Lyra UI Navigation into a Blueprint-only project, you'll have to download the binaries from this repository and extract them into [Engine Installation Folder]/Engine/Plugins/Marketplace. After doing this and opening your project, you should be able to enable the plugin by going to Plugins -> User Interface.
